@@ -1,43 +1,39 @@
 "*":
+  "atom-pair":
+    hipchat_room_name: "Development"
+    hipchat_token: "25c55e66d9fa87f5fb816ba2cfd043"
+  "autoclose-html":
+    legacyMode: true
   core:
+    autoHideMenuBar: true
     disabledPackages: [
-      "background-tips"
-      "exception-reporting"
-      "metrics"
+      "rspec"
+      "rspec"
+      "linter-reek"
     ]
-    followSymlinks: false
-    hideGitIgnoredFiles: true
-    ignoredNames: [
-      ".bundle"
-      ".git"
-      "log"
-      "repositories"
-      "tmp"
-      "vendor"
-    ]
-    telemetryConsent: "no"
     themes: [
-      "unity-ui"
-      "glacier-syntax"
+      "one-light-ui"
+      "one-light-syntax"
     ]
   editor:
-    fontFamily: "Menlo"
-    fontSize: 15
+    fontSize: 13
     invisibles: {}
-    showIndentGuide: true
-    softWrapAtPreferredLineLength: true
-  "go-plus":
-    panelDisplayMode: "closed"
-  "linter-eslint":
-    useGlobalEslint: true
-  "release-notes":
-    viewedVersion: "0.89.0"
-  "spell-check":
-    grammars: [
-      "text.plain"
-      "source.gfm"
-      "text.git-commit"
-      "text.html.basic"
-    ]
+    softWrap: true
+    softwrap: true
+  "exception-reporting":
+    userId: "597319f5-3de2-6a40-3886-0acf4e7f778b"
+  linter:
+    showErrorPanel: false
+  "linter-rubocop": {}
+  "markdown-preview":
+    breakOnSingleNewline: true
+    useGitHubStyle: true
+  "plantuml-viewer":
+    graphvizDotExecutable: "/usr/bin/dot"
+  rspec:
+    command: "vagrant ssh --c 'cd legelisten; rspec'"
+    save_before_run: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false

@@ -1,33 +1,68 @@
 # Local/private config goes in the include
 [include]
-        path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
 [hub]
-        protocol = https
+  protocol = https
 [alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
+  # List aliases
+  la = "!git config -l | grep alias | cut -c 7-"
+
+  co = checkout
+  ci = commit
+  pl = pull --rebase
+  lg = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  unstage = reset HEAD
+
+  up = !git fetch origin && git rebase origin/master
+  today = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+
+  # Get the current branch name (not so useful in itself, but used in
+  # other aliases)
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+  # Push the current branch to the remote "origin", and set it to track
+  # the upstream branch
+  publish = "!git push -u origin $(git branch-name)"
+  # Delete the remote version of the current branch
+  unpublish = "!git push origin :$(git branch-name)"
+
+  # Clean up merged branches locally. You'll normally just call bdone from command line 
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+
+  # Force push to staging and testing branches.
+  staging-push = "!git push origin $(git branch-name):staging --force" 
+  testing-push = "!git push origin $(git branch-name):testing --force" 
+
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+  ui = true
+
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
-[apply]
-        whitespace = nowarn
-[mergetool]
-        keepBackup = false
-[difftool]
-        prompt = false
-[help]
-        autocorrect = 1
+  # Detect whitespace and raise errors
+  whitespace = trailing-space,space-before-tab
+
+[url "git://github.com/"]
+  # Read-only
+  insteadOf = gh
+
+[url "git@github.com:"]
+  insteadof = wgh
+
+[url "git@heroku.com:"]
+  insteadOf = heroku
+[color]
+  ui = true
+[core]
+  # Detect whitespace and raise errors
+  whitespace = trailing-space,space-before-tab
+  editor = vim
+[merge]
+  conflictstyle = diff3
+	tool = meld
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = simple
+	default = simple
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[diff]
+	guitool = meld

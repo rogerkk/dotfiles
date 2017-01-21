@@ -1,3 +1,9 @@
-.DS_Store
-*~
-*.swp
+# Ignore everything
+*
+
+# Except...
+!.bash_aliases
+!.bashrc
+!.gitconfig
+!.gitignore
+!.password-store

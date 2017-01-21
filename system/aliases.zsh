@@ -8,3 +8,6 @@ then
   alias ll="gls -l --color"
   alias la='gls -A --color'
 fi
+
+# pbcopy copies to clipboard in OSX. Added for compatability.
+alias pbcopy='xsel --clipboard --input'
