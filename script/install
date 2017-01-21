@@ -1,4 +1,4 @@
-f#!/usr/bin/env bash
+#!/usr/bin/env bash
 #
 # Run all dotfiles installers.
 
@@ -6,9 +6,10 @@ set -e
 
 cd "$(dirname $0)"/..
 
-# Run Homebrew through the Brewfile
+# Install packages
 echo "› apt install"
-apt-get install $(grep -vE "^\s*#" apt-files  | tr "\n" " ")
+sudo apt install $(grep -vE "^\s*#" apt-files  | tr "\n" " ")
+
 
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
