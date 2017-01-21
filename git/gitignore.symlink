@@ -2,8 +2,5 @@
 *
 
 # Except...
-!.bash_aliases
-!.bashrc
-!.gitconfig
-!.gitignore
 !.password-store
+!.quotes
