@@ -1,22 +1,26 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "8400d419-6413-4b64-abbb-ff74be81f4df"
+  "atom-package-deps":
+    ignored: []
   "atom-pair":
     hipchat_room_name: "Development"
     hipchat_token: "25c55e66d9fa87f5fb816ba2cfd043"
-  "autoclose-html":
-    legacyMode: true
+  "autoclose-html": {}
   core:
     autoHideMenuBar: true
     disabledPackages: [
-      "rspec"
-      "rspec"
-      "linter-reek"
+      "symbols-view"
     ]
+    packagesWithKeymapsDisabled: []
+    telemetryConsent: "limited"
     themes: [
       "one-light-ui"
       "one-light-syntax"
     ]
   editor:
-    fontSize: 13
+    fontSize: 15
     invisibles: {}
     softWrap: true
     softwrap: true
@@ -25,15 +29,18 @@
   linter:
     showErrorPanel: false
   "linter-rubocop": {}
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
   "plantuml-viewer":
     graphvizDotExecutable: "/usr/bin/dot"
+  "quick-editor":
+    stylesDirectory: "app/assets/stylesheets"
   rspec:
-    command: "vagrant ssh --c 'cd legelisten; rspec'"
+    command: "docker exec -i legelisten_web_1 bin/rspec"
     save_before_run: true
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false

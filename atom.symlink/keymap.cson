@@ -1,2 +1,4 @@
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-&': 'editor:toggle-line-comments'
+  'ctrl-shift-enter': 'symbols-view:go-to-declaration'
+  'ctrl-shift-backspace': 'symbols-view:return-from-declaration'
