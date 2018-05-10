@@ -6,11 +6,14 @@ alias gpl='git pl'
 alias grm='git rm'
 alias gad='git add'
 alias gpu='git push'
-alias gpr='git pull-request' # "hub" command
 
 # Alias Github "hub" command as git
 eval "$(hub alias -s)"
-alias ci='hub ci-status -v'
+
+# "hub" commands
+alias gpr='hub pull-request' 
+alias gci='hub ci-status -v'
+
 
 
 
