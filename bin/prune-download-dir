@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+# Remove files older than 90 days from the Downloads directory.
+rm -R ~/Downloads/*(m+90)
