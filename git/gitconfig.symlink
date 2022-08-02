@@ -67,3 +67,15 @@
 	diff = diff-highlight | less
 [diff]
 	guitool = meld
+	colorMoved = zebra
+[user]
+	name = Roger Kind Kristiansen
+	email = roger.kristiansen@gmail.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[fetch]
+	prune = true
