@@ -1,7 +1,12 @@
 "*":
   "atom-beautify":
+    executables:
+      rubocop: {}
     general:
       _analyticsUserId: "8400d419-6413-4b64-abbb-ff74be81f4df"
+      beautifyEntireFileOnSave: false
+    js: {}
+    ruby: {}
   "atom-package-deps":
     ignored: []
   "atom-pair":
@@ -20,20 +25,30 @@
       "one-light-syntax"
     ]
   editor:
-    fontSize: 15
     invisibles: {}
     softWrap: true
     softwrap: true
   "exception-reporting":
     userId: "597319f5-3de2-6a40-3886-0acf4e7f778b"
+  "fuzzy-finder":
+    scoringSystem: "fast"
+    useRipGrep: true
   linter:
-    showErrorPanel: false
-  "linter-rubocop": {}
+    lintPreviewTabs: false
+  "linter-reek": {}
+  "linter-rubocop":
+    command: "/home/roger/.rvm/gems/ruby-2.7.6/wrappers/rubocop"
+  "linter-ruby":
+    rubyExecutablePath: "/home/roger/.rvm/rubies/ruby-2.5.3/bin/ruby"
+  "linter-scss-lint":
+    executablePath: "/home/roger/.rvm/gems/ruby-2.5.3/wrappers/scss-lint"
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 170
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
+  "plantuml-preview":
+    jarLocation: "/usr/share/plantuml/plantuml.jar"
   "plantuml-viewer":
     graphvizDotExecutable: "/usr/bin/dot"
   "quick-editor":
@@ -41,6 +56,17 @@
   rspec:
     command: "docker exec -i legelisten_web_1 bin/rspec"
     save_before_run: true
-  "tree-view": {}
+  "spell-check":
+    knownWords: [
+      "!legelisten"
+    ]
+    locales: [
+      "en-US"
+      "no-NB"
+    ]
+    useLocales: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+  whitespace: {}
