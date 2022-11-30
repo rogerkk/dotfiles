@@ -34,6 +34,9 @@
   staging-push = "!git push origin $(git branch-name):staging --force" 
   testing-push = "!git push origin $(git branch-name):testing --force" 
 
+  # Simplify amending a commit, without editing comment
+  amend = commit --amend --no-edit
+
 [color]
   ui = true
 
