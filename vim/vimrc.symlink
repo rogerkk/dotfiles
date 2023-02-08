@@ -10,6 +10,11 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Use system clipboard
+if has('unnamedplus')
+  set clipboard=unnamedplus
+endif
+
 " File browsing setup
 let g:netrw_banner = 0  " Disable top banner
 
@@ -32,6 +37,9 @@ inoremap <S-Down> <Esc>:m+<CR>
 " Switch tabs by using Alt+j or Alt+k
 nnoremap <A-j> :tabprevious<CR>
 nnoremap <A-k> :tabprevious<CR>
+
+" Reload config
+nnoremap <silent> <leader><leader> :source $MYVIMRC<CR>
 
 " Toogle line number counting method by using Ctrl+l
 "
@@ -79,6 +87,8 @@ if has('nvim')
 
     " vim-test
     Plug 'vim-test/vim-test'
+    
+    Plug 'f-person/git-blame.nvim'
   call plug#end()
 
 
@@ -249,5 +259,12 @@ nmap <silent> <leader>g :TestVisit<CR>
 
 let test#strategy='neovim'
 let test#ruby#rspec#executable='docker exec -t -e RAILS_ENV=test legelisten_web_1 bundle exec rspec'
+
+"
+" git-blame
+"
+nmap <silent> <leader>bt :GitBlameToggle<CR>
+nmap <silent> <leader>bc :GitBlameCopyCommitSHA<CR>
+nmap <silent> <leader>bo :GitBlameOpenCommitURL<CR>
 
 endif
