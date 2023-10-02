@@ -11,8 +11,8 @@ alias gpu='git push'
 eval "$(hub alias -s)"
 
 # "hub" commands
-alias gpr='hub pull-request' 
-alias gci='hub ci-status -v'
+alias gpr='gh pr create' 
+alias gci='gh run list --user rogerkk --limit 10 --branch `git branch --show-current`'
 
 
 
