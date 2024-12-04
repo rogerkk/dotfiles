@@ -9,6 +9,7 @@
 
   co = checkout
   ci = commit
+  sw = switch
   pl = pull --rebase
   pr = pull-request
   lg = log --graph --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
