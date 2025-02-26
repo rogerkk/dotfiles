@@ -1,12 +1,7 @@
 zsh
-atom
 guake
 byzanz
+workrave
 
-tomate-gtk
-tomate-alarm-plugin
-tomate-indicator-plugin
-tomate-notify-plugin
-tomate-statusicon-plugin
-
-
+flameshot
+peek
