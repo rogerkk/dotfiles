@@ -49,7 +49,17 @@ setup_gitconfig () {
   fi
 }
 
+copy_dot_config () {
+  # Define source and destination directories
+  SOURCE_DIR="dot-config"
+  DEST_DIR="$HOME/.config"
 
+  # Copy only non-hidden files and directories
+  cp -a "$SOURCE_DIR"/* "$DEST_DIR"
+
+  success 'copy_dot_config'
+}
+  
 link_file () {
   local src=$1 dst=$2
 
