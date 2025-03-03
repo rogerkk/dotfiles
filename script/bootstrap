@@ -148,6 +148,7 @@ install_dotfiles () {
 }
 
 setup_gitconfig
+copy_dot_config
 install_dotfiles
 
 # If we're on a Mac, let's install and setup homebrew.
