@@ -40,4 +40,4 @@ done
 
 unset config_files
 
-#~/.quotes/output_a_quote.sh
+~/.quotes/output_a_quote.sh
