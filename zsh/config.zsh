@@ -32,3 +32,4 @@ setopt complete_aliases
 
 # Vim key bindings
 bindkey -v
+bindkey "^R" history-incremental-pattern-search-backward
