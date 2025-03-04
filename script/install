@@ -10,6 +10,8 @@ cd "$(dirname $0)"/..
 echo "› apt install"
 sudo apt install $(grep -vE "^\s*#" apt-files  | tr "\n" " ")
 
+echo "> snap install"
+sudo snap install $(grep -vE "^\s*#" snap-files  | tr "\n" " ")
 
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
