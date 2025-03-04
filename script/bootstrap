@@ -49,17 +49,6 @@ setup_gitconfig () {
   fi
 }
 
-copy_dot_config () {
-  # Define source and destination directories
-  SOURCE_DIR="dot-config"
-  DEST_DIR="$HOME/.config"
-
-  # Copy only non-hidden files and directories
-  cp -a "$SOURCE_DIR"/* "$DEST_DIR"
-
-  success 'copy_dot_config'
-}
-  
 link_file () {
   local src=$1 dst=$2
 
@@ -147,9 +136,26 @@ install_dotfiles () {
   done
 }
 
+# Add symlink for nvim using GNU stow.
+#
+# I think stow is the way we should really be handling all the dotfiles, but
+# I currently don't want to spend time rewriting the whole thing.
+#
+# (GNU stow is a symlink farm manager)
+install_nvim_config () {
+  info 'installing nvim config'
+
+  local src="$DOTFILES_ROOT/nvim"
+
+  stow -t "$HOME" nvim
+
+  success 'installed nvim config'
+}
+
 setup_gitconfig
 copy_dot_config
 install_dotfiles
+install_nvim_config
 
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
