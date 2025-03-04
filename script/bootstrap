@@ -153,7 +153,6 @@ install_nvim_config () {
 }
 
 setup_gitconfig
-copy_dot_config
 install_dotfiles
 install_nvim_config
 
