@@ -20,5 +20,10 @@ make
 gcc
 ripgrep
 bat
+curl
+wget
+
+nodejs
+npm
 
 fonts-noto-color-emoji
