@@ -1,0 +1,38 @@
+# Temporary directories
+shell-snapshots/
+todos/
+statsig/
+projects/
+local/
+
+# Database and cache files
+__store.db
+
+# Credentials (sensitive)
+.credentials.json
+
+# Other temporary files
+*.tmp
+*.temp
+*.cache
+*.log
+*.swp
+*.swo
+*~
+
+# Session files
+session_*
+temp_*
+tmp_*
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Lock files
+*.lock
+.lock
+
+# PID files
+*.pid

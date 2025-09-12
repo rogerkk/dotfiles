@@ -1,0 +1,9 @@
+{
+  "feedbackSurveyState": {
+    "lastShownTime": 1753977207041
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-zsh.sh"
+  }
+}
