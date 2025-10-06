@@ -41,6 +41,10 @@ The playwright-browser-tester agent specializes in:
 3. Test error conditions and edge cases
 4. Document any issues or unexpected behavior
 
+**File Storage:**
+- Screenshots and traces should be saved to `tmp/` directory to avoid cluttering the project root
+- Specify working directory as `tmp/` when instructing the agent
+
 **Example Usage:**
 ```
 User: Test the provider search functionality
